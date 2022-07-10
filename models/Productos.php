@@ -5,7 +5,7 @@ class Productos extends Conectar
     {
         $db = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM producto;";
+        $sql = "SELECT * FROM producto ORDER BY id DESC;";
         $sql = $db->prepare($sql);
         $sql->execute();
         $resultado = $sql->fetchAll(PDO::FETCH_OBJ);
