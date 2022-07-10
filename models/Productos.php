@@ -5,7 +5,7 @@ class Productos extends Conectar
     {
         $db = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM producto ORDER BY id DESC WHERE eliminado = 1;";
+        $sql = "SELECT * FROM producto WHERE eliminado = 1 ORDER BY id DESC;";
         $sql = $db->prepare($sql);
         $sql->execute();
         $resultado = $sql->fetchAll(PDO::FETCH_OBJ);
