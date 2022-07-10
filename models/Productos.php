@@ -5,7 +5,7 @@ class Productos extends Conectar
     {
         $db = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM producto ORDER BY id DESC;";
+        $sql = "SELECT * FROM producto ORDER BY id DESC WHERE eliminado = 1;";
         $sql = $db->prepare($sql);
         $sql->execute();
         $resultado = $sql->fetchAll(PDO::FETCH_OBJ);
@@ -74,7 +74,7 @@ class Productos extends Conectar
     {
         $conectar = parent::conexion();
         parent::set_names();
-        $sql = "DELETE FROM `producto` WHERE id = ?;";
+        $sql = "UPDATE `producto` SET eliminado=0 WHERE id = ?;;";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $id);
         $resultado['estatus'] = $sql->execute();
