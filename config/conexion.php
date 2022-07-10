@@ -12,7 +12,7 @@ class Conectar
             $HOST = 'us-cdbr-east-06.cleardb.net';
             $USER = 'bcda29a4618951';
             $PASSWORD = '568ed9be';
-            $conectar = $this->db = new PDO("mysql:local=$HOST;dbname=$NAMEDB", "$USER", "$PASSWORD");
+            $conectar = $this->db = new PDO("mysql:host=$HOST;dbname=$NAMEDB", "$USER", "$PASSWORD");
             return $conectar;
         } catch (Exception $e) {
             print "¡Error BD!: " . $e->getMessage() . "<br/>";
