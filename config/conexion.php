@@ -8,10 +8,10 @@ class Conectar
     protected function Conexion()
     {
         try {
-            $NAMEDB = 'pw_ii';
-            $HOST = 'localhost';
-            $USER = 'root';
-            $PASSWORD = '';
+            $NAMEDB = 'heroku_732d3535c5788f8';
+            $HOST = 'us-cdbr-east-06.cleardb.net';
+            $USER = 'bcda29a4618951';
+            $PASSWORD = '568ed9be';
             $conectar = $this->db = new PDO("mysql:local=$HOST;dbname=$NAMEDB", "$USER", "$PASSWORD");
             return $conectar;
         } catch (Exception $e) {
