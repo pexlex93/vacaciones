@@ -5,7 +5,7 @@ class Productos extends Conectar
     {
         $db = parent::conexion();
         parent::set_names();
-        $sql = "SELECT * FROM producto WHERE eliminado = 1 ORDER BY id DESC;";
+        $sql = "SELECT `id`, `nombre`, `genero`, `descripcion`, `url`, DATE_FORMAT(fecha, '%Y-%m-%dT%H:%i:%S') AS fecha, `categoria` FROM producto WHERE eliminado = 1 ORDER BY id DESC;";
         $sql = $db->prepare($sql);
         $sql->execute();
         $resultado = $sql->fetchAll(PDO::FETCH_OBJ);
